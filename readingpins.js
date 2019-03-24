@@ -8,6 +8,8 @@ var input3 = new Gpio(10, 'in', 'both');
 
 var input4 = new Gpio(8, 'in', 'both');
 
+console.log("Starting to listen")
+
 input1.watch((err, value) => {
   if (err) {
     throw err;
