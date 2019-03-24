@@ -8,7 +8,15 @@ var input3 = new Gpio(10, 'in', 'both');
 
 var input4 = new Gpio(8, 'in', 'both');
 
-console.log("Starting to listen")
+console.log("Starting to listen");
+
+console.log(input1.readSync());
+
+console.log(input2.readSync());
+
+console.log(input3.readSync());
+
+console.log(input4.readSync());
 
 input1.watch((err, value) => {
   if (err) {
