@@ -19,6 +19,9 @@ const mcp3008 = spi.open(0, 0, (err) => {
     const rawValue = ((message[0].receiveBuffer[1] & 0x03) << 8) +
       message[0].receiveBuffer[2];
     const voltage = rawValue * 3.3 / 1023;
+
+    console.log(voltage);
+    
     const celcius = (voltage - 0.5) * 100;
 
     console.log(celcius);
