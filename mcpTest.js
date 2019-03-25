@@ -1,6 +1,6 @@
 const mcpadc = require('mcp-spi-adc');
 
-const pHSensor = mcpadc.open(1, {speedHz: 20000}, (err) => {
+const pHSensor = mcpadc.open(0, {speedHz: 20000}, (err) => {
   if (err) throw err;
 
   setInterval(() => {
@@ -12,7 +12,7 @@ const pHSensor = mcpadc.open(1, {speedHz: 20000}, (err) => {
   }, 1000);
 
 });
-const ECSensor = mcpadc.open(3, {speedHz: 20000}, (err) => {
+const ECSensor = mcpadc.open(2, {speedHz: 20000}, (err) => {
   if (err) throw err;
 
   setInterval(() => {
@@ -24,7 +24,7 @@ const ECSensor = mcpadc.open(3, {speedHz: 20000}, (err) => {
   }, 1000);
 });
 
-const tempSensor = mcpadc.open(5, {speedHz: 20000}, (err) => {
+const tempSensor = mcpadc.open(4, {speedHz: 20000}, (err) => {
   if (err) throw err;
 
   setInterval(() => {
