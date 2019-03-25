@@ -12,7 +12,7 @@ const pHSensor = mcpadc.open(1, {speedHz: 20000}, (err) => {
   }, 1000);
 
 });
-const ECSensor = mcpadc.open(3, {speedHz: 20000}, (err) => {
+const ECSensor = mcpadc.open(3, {speedHz: 40000}, (err) => {
   if (err) throw err;
 
   setInterval(() => {
