@@ -7,7 +7,7 @@ const pHSensor = mcpadc.open(1, {speedHz: 20000}, (err) => {
     pHSensor.read((err, reading) => {
       if (err) throw err;
 
-      console.log("EC Sensor " + (reading.value * 3.3));
+      console.log("EC Sensor " + (reading.value));
     });
   }, 1000);
 
@@ -19,7 +19,7 @@ const ECSensor = mcpadc.open(3, {speedHz: 20000}, (err) => {
     pHSensor.read((err, reading) => {
       if (err) throw err;
 
-      console.log("pH sensor " + (reading.value * 3.3 - 0.5) * 100);
+      console.log("pH sensor " + (reading.value));
     });
   }, 1000);
 });
@@ -31,7 +31,7 @@ const tempSensor = mcpadc.open(5, {speedHz: 20000}, (err) => {
     tempSensor.read((err, reading) => {
       if (err) throw err;
 
-      console.log("temp sensor " + (reading.value * 3.3 - 0.5) * 100);
+      console.log("temp sensor " + (reading.value));
     });
   }, 1000);
 });
