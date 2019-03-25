@@ -24,7 +24,7 @@ const ECSensor = mcpadc.open(3, {speedHz: 20000}, (err) => {
   }, 1000);
 });
 
-const tempSensor = mcpadc.open(3, {speedHz: 20000}, (err) => {
+const tempSensor = mcpadc.open(5, {speedHz: 20000}, (err) => {
   if (err) throw err;
 
   setInterval(() => {
