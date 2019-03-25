@@ -18,12 +18,12 @@ const mcp3008 = spi.open(0, 0, (err) => {
     // Convert raw value from sensor to celcius and log to console
     const rawValue = ((message[0].receiveBuffer[1] & 0x03) << 8) +
       message[0].receiveBuffer[2];
-    const voltage = rawValue * 3.3 / 1023;
+    const mvoltage = rawValue * 3.3 / 1023000;
 
-    console.log(voltage);
-    
-    const celcius = (voltage - 0.5) * 100;
+    console.log(mvoltage);
 
-    console.log(celcius);
+    const ph  = (voltage - .41412) * -5.616;
+
+    console.log("the ph is" + ph);
   });
 });
