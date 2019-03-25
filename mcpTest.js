@@ -35,3 +35,15 @@ const tempSensor = mcpadc.open(5, {speedHz: 20000}, (err) => {
     });
   }, 1000);
 });
+
+const testSensor = mcpadc.open(7, {speedHz: 20000}, (err) => {
+  if (err) throw err;
+
+  setInterval(() => {
+    testSensor.read((err, reading) => {
+      if (err) throw err;
+
+      console.log("test sensor " + (reading.value));
+    });
+  }, 1000);
+});
