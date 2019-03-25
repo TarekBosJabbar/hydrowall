@@ -24,6 +24,6 @@ const mcp3008 = spi.open(0, 0, (err) => {
 
     const ph  = (voltage - .41412) / -.05916;
 
-    console.log("the ph is" + ph);
+    console.log("the ph is " + ph);
   });
 });
