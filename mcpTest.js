@@ -2,7 +2,8 @@
 
 const mcpadc = require('mcp-spi-adc');
 var datalog = ["test"]
-
+var varCount = 0;
+var denom = 1;
 
 const pHSensor = mcpadc.open(0, {speedHz: 20000}, (err) => {
   if (err) throw err;
@@ -11,12 +12,17 @@ const pHSensor = mcpadc.open(0, {speedHz: 20000}, (err) => {
     pHSensor.read((err, reading) => {
       if (err) throw err;
 
-      console.log("pH Sensor " + (reading.value));
-      console.log("pH " + (reading.value * 10));
+      if (varCount <= (denom * 100)) {
       datalog.push(reading.value);
-
-    });
-  }, 1000);
+      varCount ++;
+  } else {
+  	denom ++
+  	let sum = datalog.reduce((acc, val) => {
+  		return acc + val;
+  		console.log(sum / 100)
+  	});
+  	}
+  }, 100);
 
 console.log(datalog);
 
