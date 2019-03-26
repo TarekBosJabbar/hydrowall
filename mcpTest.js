@@ -1,4 +1,4 @@
-// This is mostly a test code in an attempt to get analog sensors to interface with a raspberrypi
+// This is mostly a test code in an attempt to get analog sensors to interface with a raspberry
 
 const mcpadc = require('mcp-spi-adc');
 
@@ -23,7 +23,7 @@ const ECSensor = mcpadc.open(2, {speedHz: 20000}, (err) => {
     pHSensor.read((err, reading) => {
       if (err) throw err;
 
-      console.log("pH sensor " + (reading.value));
+      console.log("pH sensor " + (-reading.value - .41412 * 59.6));
     });
   }, 1000);
 });
