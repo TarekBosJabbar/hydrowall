@@ -23,7 +23,7 @@ const ECSensor = mcpadc.open(2, {speedHz: 20000}, (err) => {
     pHSensor.read((err, reading) => {
       if (err) throw err;
 
-      console.log("pH sensor " + (-reading.value - .41412 * 59.6));
+      console.log("pH sensor " + (reading.value - .41412 * 59.6));
     });
   }, 1000);
 });
