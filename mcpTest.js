@@ -20,8 +20,7 @@ const pHSensor = mcpadc.open(0, {speedHz: 20000}, (err) => {
   	let sum = datalog.reduce((acc, val) => {
   		return acc + val;
   		console.log(sum / 100)
-  	});
-  	}
+  	})}
   }, 100);
 
 console.log(datalog);
