@@ -4,7 +4,7 @@ const mcpadc = require('mcp-spi-adc');
 const m = 14.384;
 const b = .90;
 
-const pHSensor = mcpadc.open(0, {speedHz: 2000}, (err) => {
+const pHSensor = mcpadc.open(0, {speedHz: 40000}, (err) => {
   if (err) throw err;
 
   setInterval(() => {
@@ -14,7 +14,7 @@ const pHSensor = mcpadc.open(0, {speedHz: 2000}, (err) => {
       console.log("pH Sensor " + (reading.value));
       console.log("pH " + (reading.value*m + b));
     });
-  }, 2000);
+  }, 500);
 
 });
 
